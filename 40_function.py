@@ -30,10 +30,10 @@ my_function("Jay")
 # Example
 # This function expects 2 arguments, and gets 2 arguments:
 
-def my_function1(fname, lname):
+def my_function1(fname, lname): # parrameters or formal parameters
   print(fname + " " + lname)
 
-my_function1("Abhisek", "Kumar")
+my_function1("Abhisek", "Kumar") # arguments of actual parameters
 
 
 # Arbitrary Arguments, *args
@@ -44,10 +44,22 @@ my_function1("Abhisek", "Kumar")
 # Example
 # If the number of arguments is unknown, add a * before the parameter name:
 
+# 1
 def my_function2(*kids):
   print("The youngest child is " + kids[2])
 
 my_function2("Emil", "Tobias", "Linus")
+
+# 2
+def addNum(*numbers):
+  total = 0
+  print(numbers[1])
+  for i in numbers:
+    total += i
+  print(f"sum is : {total}")
+
+addNum(1,2,3,4,5,6,7,8,9) # this acts as a tuple and tuples are immutable
+addNum(1,2,3,4,5,6,7)
 
 
 # Arbitrary Keyword Arguments, **kwargs
@@ -59,10 +71,19 @@ my_function2("Emil", "Tobias", "Linus")
 # Example
 # If the number of keyword arguments is unknown, add a double ** before the parameter name:
 
+# 1
 def my_function3(**kid):
   print("His last name is " + kid["lname"])
 
 my_function3(fname = "Tobias", lname = "Refsnes")
+
+# 2
+def info_person(**info):
+  for key, value in info.items():
+    print(key, value)
+
+info_person(name = "Abhi", age = 29, dept = "BCA")
+info_person(name = "Nav", dept = "B.Tech")
 
 
 # Default Parameter Value
