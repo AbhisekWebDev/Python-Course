@@ -155,3 +155,83 @@ def tri_recursion(k):
 
 print("\n\nRecursion Example Results")
 tri_recursion(6)
+
+
+
+
+
+
+
+
+
+
+# Types of functions
+
+# Function Without Argument and Without Return
+
+def greet():
+    print("Hello, welcome to Python programming!")
+
+greet()
+
+
+
+# Function With Argument and Without Return
+# This function takes a name as an argument and prints a greeting message.
+
+def greet_user(name):
+    print(f"Hello, {name}! Welcome to Python programming!")
+
+greet_user("Alice")
+
+
+
+# Function Without Argument and With Return
+
+def get_greeting():
+    return "Hello, welcome to Python programming!"
+
+message = get_greeting()
+print(message)
+
+
+
+# Function With Argument and With Return
+# This function takes two numbers as arguments and returns their sum.
+
+def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(5, 3)
+print(f"The sum of 5 and 3 is {result}")
+
+
+
+# Title Case Program
+
+def format_name(f_name, l_name):
+  formatted_f_name = f_name.title()
+  formatted_l_name = l_name.title()
+  return f"{formatted_f_name} {formatted_l_name}"
+
+fname = input("Enter first name : ")
+lname = input("Enter last name : ")
+
+print(format_name(fname, lname))
+
+
+
+
+
+
+
+
+
+import statistics
+
+def mean_median_mode(list):
+  return statistics.mean(list), statistics.median(list), statistics.mode(list)
+
+a, b, c = mean_median_mode([1,2,3,4,5,6,7,8,9,3,5,9,8,8,3,5,4,3])
+
+print(f"Mean = {a}, Median = {b}, Mode = {c}")
