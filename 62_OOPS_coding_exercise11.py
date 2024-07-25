@@ -7,7 +7,7 @@ class University:
 
 class Course(University):
     def __init__(self, uni_name, course_name):
-        super().__init__(uni_name)
+        University.__init__(self, uni_name)
         self.course_name = course_name
 
     def showDetails(self):
@@ -15,17 +15,16 @@ class Course(University):
 
 class Branch(University):
     def __init__(self, uni_name, branch_name):
-        super().__init__(uni_name)
+        University.__init__(self, uni_name)
         self.branch_name = branch_name
 
     def showDetails(self):
         print(f"The name of the university is = {self.uni_name} & the branch name is = {self.branch_name}")
 
-class Student(University):
+class Student(Course, Branch):
     def __init__(self, uni_name, course_name, branch_name, student_name):
-        super().__init__(uni_name)
-        self.course_name = course_name
-        self.branch_name = branch_name
+        Course.__init__(self, uni_name, course_name)
+        Branch.__init__(self, uni_name, branch_name)
         self.student_name = student_name
 
     def showDetails(self):
